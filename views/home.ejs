@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Hello Bangladesh!</h1>
+
+    <% for(p of data){ %>
+        <div class="post"> 
+            <h3 class="user">@<%= p.userName%></h1>
+            <p class="content"><%= p.content%></p>
+            <a href="http://localhost:3000/posts/details/<%= p.id%>">details</a>
+            <a href="http://localhost:3000/posts/update/<%= p.id%>">edit</a>
+            <form action="/posts/delete/<%= p.id %>?_method=DELETE" method="post">
+                <BUtton type="submit">delete</BUtton>
+            </form> 
+        </div>
+        
+    <% } %>
+    <br> <br>
+    <a href="http://localhost:3000/posts/new">create a new post</a>
+    <script src="/js/index.js"></script>
+</body>
+</html>
