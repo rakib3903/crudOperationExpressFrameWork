@@ -3,16 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Post</title>
+    <title>Edit Post</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Form container */
+        .form-container {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #006a4e;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+            margin: 5px 0;
+        }
+
+        /* Textarea */
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            margin-top: 10px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #006a4e;
+            box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #006a4e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #028c65;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+            textarea, button {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>Edit your post</h2>
-    <p>Youer Id : @<%= post.id %></p>
-    <p>Youer post : @<%= post.userName %></p>
-    <form action="/posts/edit/<%= post.id %>?_method=PATCH" method="post">
-        <textarea name="content" rows="10" cols="35" ><%= post.content %></textarea> 
-        <button type="submit">submit</button>
+    <div class="form-container">
+        <h2>Edit Your Post</h2>
+        <p>Your Post: <%= post.userName %></p>
 
-    </form>
+        <form action="/posts/edit/<%= post.id %>?_method=PATCH" method="post">
+            <textarea name="content" rows="8" required><%= post.content %></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

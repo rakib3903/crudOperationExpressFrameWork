@@ -4,13 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Post</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Form container */
+        form {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #006a4e;
+            margin-bottom: 20px;
+        }
+
+        /* Inputs and textarea */
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #006a4e;
+            box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #006a4e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #028c65;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            form {
+                padding: 20px;
+            }
+
+            input, textarea, button {
+                font-size: 15px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <form action="/posts" method="post">
-        <input placeholder="user name" name="userName", type="text"><br>
-        <textarea name="content" placeholder="content" ></textarea> 
-        <button type="submit">submit</button>
-
+        <h1>Create New Post</h1>
+        <input placeholder="Post Title" name="userName" type="text" required>
+        <textarea name="content" placeholder="Content" rows="5" required></textarea>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

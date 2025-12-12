@@ -1,17 +1,92 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangladesh</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #006a4e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .post {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .post h3 {
+            margin: 0;
+            color: #1a1a1a;
+            font-size: 20px;
+        }
+
+        .content {
+            font-size: 17px;
+            color: #444;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        a {
+            margin-top: 25px;
+            display: inline-block;
+            text-decoration: none;
+            background: #006a4e;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #028c65;
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 480px) {
+            .post {
+                padding: 15px;
+            }
+
+            .content {
+                font-size: 15px;
+            }
+
+            a {
+                padding: 8px 14px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello Bangladesh!</h1>
-        <div class="post">
-            <h3 class="user">@<%= post.userName %></h1>
-            <p class="content"><%= post.content %></p>
-        </div>
-        <a href="http://localhost:3000/posts">go back</a>
-</body> 
+    <h1>Welcome to the post page!</h1>
+
+    <div class="post">
+        <h3 class="user"><%= post.userName %></h3>
+        <p class="content"><%= post.content %></p>
+    </div>
+
+    <a href="http://localhost:3000/posts">Go Back</a>
+</body>
 </html>
